@@ -198,6 +198,20 @@
       border-radius: 10px;
       margin-bottom: 10px;
     }
+
+    /* Media Query para telas menores */
+    @media screen and (max-width: 600px) {
+      header {
+        flex-direction: column;
+      }
+      .header-image {
+        width: 80%;
+        height: auto;
+      }
+      .header-title h1 {
+        font-size: 2.5rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -264,29 +278,4 @@
 
     <div class="map-container">
       <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.9472132199286!2d-45.90090738442494!3d-23.189612484876533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cc4aeb451ef6d3%3A0xf1c5cfb3d8c5dfd!2sAv.%20Cassiop%C3%A9ia%2C%20921%20-%20Jardim%20Sat%C3%A9lite%2C%20S%C3%A3o%20Jos%C3%A9%20dos%20Campos%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1616405621235!5m2!1spt-BR!2sbr"
-        allowfullscreen="" loading="lazy"></iframe>
-    </div>
-  </div>
-
-  <script>
-    function openModal(service) {
-      const modal = document.getElementById('modal');
-      const imageGallery = document.getElementById('image-gallery');
-      imageGallery.innerHTML = '';
-      for (let i = 1; i <= 5; i++) {
-        const img = document.createElement('img');
-        img.src = `imagem/${service}-${i}.jpg`;
-        img.alt = `${service} imagem ${i}`;
-        imageGallery.appendChild(img);
-      }
-      modal.style.display = 'block';
-    }
-
-    function closeModal() {
-      const modal = document.getElementById('modal');
-      modal.style.display = 'none';
-    }
-  </script>
-</body>
-</html>
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.9472132199286!2d-45.90090738442494!3d-23.189612484876533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cc4aeb451ef6d3%3A0xf1c5cfb3d8c5dfd!2sAv.%20Cassiop%C3%A9ia%2C%20921%20-%20Jardim%20Sat%C3%A9lite%2C%20S%C3%A3o%20Jos%C3%A9%20dos%20Campos%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1616405621235!5m2!1spt-BR!2sbr" \n        allowfullscreen="" loading="lazy"></iframe>\n    </div>\n  </div>\n\n  <script>\n    function openModal(service) {\n      const modal = document.getElementById('modal');\n      const imageGallery = document.getElementById('image-gallery');\n      imageGallery.innerHTML = '';\n      for (let i = 1; i <= 5; i++) {\n        const img = document.createElement('img');\n        img.src = `imagem/${service}-${i}.jpg`;\n        img.alt = `${service} imagem ${i}`;\n        imageGallery.appendChild(img);\n      }\n      modal.style.display = 'block';\n    }\n\n    function closeModal() {\n      const modal = document.getElementById('modal');\n      modal.style.display = 'none';\n    }\n  </script>\n</body>\n</html>
