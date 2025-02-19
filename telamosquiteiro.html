@@ -94,8 +94,17 @@
       font-size: 1.2rem;
       color: #003366; /* Azul escuro */
     }
-    /* Restante do CSS mantido igual */
-    /* ... (restante do seu CSS) ... */
+    /* Media Query para telas menores */
+    @media screen and (max-width: 600px) {
+      /* Em dispositivos pequenos, usa uma coluna */
+      #gallery-container {
+        grid-template-columns: 1fr;
+      }
+      .gallery-item img {
+        width: 100%;
+        height: auto;
+      }
+    }
   </style>
 </head>
 <body>
