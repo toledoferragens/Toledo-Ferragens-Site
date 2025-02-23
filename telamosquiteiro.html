@@ -286,7 +286,9 @@
       // Preço da tela (TelaNylonCinza)
       const term5 = usedDimension * valores.TelaNylonCinza;
       // Valor da montagem (se não existir, consideramos 0)
-      const montagem = valores.Montagem ? parseFloat(valores.Montagem) : 0;
+      //const montagem = valores.Montagem ? parseFloat(valores.Montagem) : 0;
+      const montagem = opcao === "montada" ? (valores.Montagem !== undefined ? parseFloat(valores.Montagem) : 0) : 0;
+
       
       const total = Math.ceil(term1 + term2 + term3 + term4 + term5 + montagem);
       //total = Math.ceil(total); // Arredondando sempre para cima
