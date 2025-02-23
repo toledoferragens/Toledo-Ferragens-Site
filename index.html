@@ -392,6 +392,11 @@
   </div>
   
   <script>
+
+    if (window.location.pathname === "/telas") {
+      window.location.href = "/Toledo-Ferragens-Site/telamosquiteiro.html";
+    }
+
     function toggleMenu() {
       const sideMenu = document.getElementById("side-menu");
       sideMenu.style.display = (sideMenu.style.display === "block") ? "none" : "block";
@@ -420,6 +425,7 @@
       const modal = document.getElementById('modal');
       modal.style.display = 'none';
     }
+    
   </script>
 </body>
 </html>
