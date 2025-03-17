@@ -144,6 +144,32 @@
         font-size: 2rem;
       }
     }
+    /* Estilos do modal */
+  .popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+  }
+  .popup-conteudo {
+    margin-top: 5%;
+    max-width: 90%;
+    max-height: 90%;
+  }
+  .fechar {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
   </style>
 </head>
 <body>
@@ -162,6 +188,11 @@
   <div class="simulador-section">
     <h2>Simulador de Preços</h2>
 
+    <!-- Modal (popup) EXIBE A IMAGEM DO FORMULÁRIO MAIOR -->
+    <div id="popup" class="popup">
+      <span class="fechar" onclick="fecharPopup()">&times;</span>
+      <img id="imagemPopup" class="popup-conteudo">
+    </div>
 
     <form id="simulador-form">
       <div style="display: grid; grid-template-columns: 40% 60%; gap: 10px; align-items: start; width: 100%;">
@@ -196,7 +227,7 @@
           <br>
         </div>
         <div id="imagemContainer" style="display: flex; justify-content: center; align-items: center;">
-          <img id="imagemDinamica" src="" style="display: none; width: 150px;">
+          <img id="imagemDinamica" src="" style="display: none; width: 150px;" onclick="abrirPopup()" style="cursor: pointer; max-width: 300px;">
         </div>
         <br>
       </div>
@@ -365,6 +396,16 @@
       })
       .catch(error => console.error('Erro ao carregar as imagens:', error));
   
+
+      function abrirPopup() {
+        var imagem = document.getElementById('imagemDinamica').src;
+        document.getElementById('imagemPopup').src = imagem;
+        document.getElementById('popup').style.display = "block";
+      }
+
+      function fecharPopup() {
+        document.getElementById('popup').style.display = "none";
+      }
   </script>
 </body>
 </html>
